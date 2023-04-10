@@ -20,7 +20,7 @@ function ListMovie() {
       <h2 className="text-4xl uppercase font-bold text-center mb-2">
         Hot Movies
       </h2>
-      <div className="grid grid-cols-4 gap-10">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {movies.slice(0, 8).map((item) => {
           return <ItemMovie data={item} key={item.maPhim} />;
         })}

@@ -77,12 +77,12 @@ const UserMenu = () => {
       return (
         <>
           <NavLink to="/login">
-            <button className="bg-blue-800 hover:bg-blue-600 text-white text-xs py-1 px-4 rounded-full transition-all mr-1">
+            <button className="bg-blue-800 hover:bg-blue-600 text-white text-xs py-2 px-4 rounded-full transition-all mr-1">
               Login
             </button>
           </NavLink>
           <NavLink to="/register">
-            <button className="bg-blue-800 hover:bg-blue-600 text-white text-xs py-1 px-4 rounded-full transition-all">
+            <button className="bg-blue-800 hover:bg-blue-600 text-white text-xs py-2 px-4 rounded-full transition-all">
               Register
             </button>
           </NavLink>
