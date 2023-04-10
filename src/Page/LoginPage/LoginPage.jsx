@@ -3,7 +3,7 @@ import Animate from "./Animation";
 import "./loginPage.css";
 import { userService } from "../../services/userService";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { setUserLogin } from "../../toolkit/userSlice";
 import { localUserService } from "../../services/localUserService";
 
@@ -60,7 +60,7 @@ const LoginPage = () => {
             autoComplete="off"
           >
             <Form.Item
-              label="taiKhoan"
+              label="Username"
               name="taiKhoan"
               rules={[
                 {
@@ -78,7 +78,7 @@ const LoginPage = () => {
             </Form.Item>
 
             <Form.Item
-              label="matKhau"
+              label="Password"
               name="matKhau"
               rules={[
                 {
@@ -110,8 +110,9 @@ const LoginPage = () => {
               </Button>
             </Form.Item>
           </Form>
+          <p className="text-center">Do not have an account? <NavLink to="/register" className="underline hover:text-blue-100">Register</NavLink></p>
         </div>
-        <div className="z-50">
+        <div className="z-10">
           <Animate />
         </div>
       </div>

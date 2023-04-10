@@ -1,0 +1,18 @@
+.registerpage__content{
+    background-image: url(../../assets/newslater-bg01.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.registerpage__content::after{
+    position: absolute;
+    content: '';
+    background-image: linear-gradient(0deg, #7400ba 0%, #0f5ae0 100%);
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+}

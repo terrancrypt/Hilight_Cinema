@@ -5,7 +5,7 @@ import CineFlex from "./CineFlex/CineFlex";
 function HomePage() {
   return (
     <div className="container space-y-10 flex flex-col items-center">
-      <ListMovie />
+      <ListMovie/>
       <CineFlex/>
     </div>
   );

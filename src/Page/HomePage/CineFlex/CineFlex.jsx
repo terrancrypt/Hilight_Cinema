@@ -19,47 +19,52 @@ const CineFlex = () => {
   }, []);
 
   return (
-    <div id="#cineFlex" className="bg-white p-5 rounded-lg w-100">
-      <Tabs
-        style={{
-          height: 500,
-        }}
-        tabPosition="left"
-        items={cineFlex.map((cineFlex) => {
-          return {
-            label: <img className="h-16" src={cineFlex.logo} />,
-            key: cineFlex.maHeThongRap,
-            children: (
-              <Tabs
-                style={{
-                  height: 500,
-                }}
-                tabPosition="left"
-                items={cineFlex.lstCumRap.map((cinema) => {
-                  return {
-                    label: cinema.tenCumRap,
-                    key: cinema.maCumRap,
-                    children: (
-                      <div
-                        style={{ height: 500 }}
-                        className="overflow-y-scroll"
-                      >
-                        {cinema.danhSachPhim.map((item) => {
-                          return (
-                            <div className="mb-5">
-                              <ItemCineFlex data={item} />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ),
-                  };
-                })}
-              />
-            ),
-          };
-        })}
-      />
+    <div id="cineplex">
+      <h2 className="text-4xl uppercase font-bold text-center mb-2">
+        CinePlex
+      </h2>
+      <div className="bg-white p-5 rounded-lg w-100">
+        <Tabs
+          style={{
+            height: 500,
+          }}
+          tabPosition="left"
+          items={cineFlex.map((cineFlex) => {
+            return {
+              label: <img className="h-16" src={cineFlex.logo} />,
+              key: cineFlex.maHeThongRap,
+              children: (
+                <Tabs
+                  style={{
+                    height: 500,
+                  }}
+                  tabPosition="left"
+                  items={cineFlex.lstCumRap.map((cinema) => {
+                    return {
+                      label: cinema.tenCumRap,
+                      key: cinema.maCumRap,
+                      children: (
+                        <div
+                          style={{ height: 500 }}
+                          className="overflow-y-scroll"
+                        >
+                          {cinema.danhSachPhim.map((item) => {
+                            return (
+                              <div className="mb-5">
+                                <ItemCineFlex data={item} />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ),
+                    };
+                  })}
+                />
+              ),
+            };
+          })}
+        />
+      </div>
     </div>
   );
 };
