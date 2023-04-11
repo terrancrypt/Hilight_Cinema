@@ -10,7 +10,6 @@ const CineFlexDesktop = () => {
     movieService
       .getMoviveByTheaters()
       .then((res) => {
-        console.log(res);
         setCineFlex(res.data.content);
       })
       .catch((err) => {
@@ -48,10 +47,10 @@ const CineFlexDesktop = () => {
                           style={{ height: 500 }}
                           className="overflow-y-scroll"
                         >
-                          {cinema.danhSachPhim.map((item) => {
+                          {cinema.danhSachPhim.map((item, index) => {
                             return (
                               <div className="mb-5">
-                                <ItemCineFlex data={item} />
+                                <ItemCineFlex data={item} key={index}/>
                               </div>
                             );
                           })}

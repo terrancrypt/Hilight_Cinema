@@ -10,7 +10,6 @@ const CineFlexTablet = () => {
     movieService
       .getMoviveByTheaters()
       .then((res) => {
-        console.log(res);
         setCineFlex(res.data.content);
       })
       .catch((err) => {

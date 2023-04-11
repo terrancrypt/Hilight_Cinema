@@ -10,7 +10,6 @@ const CineFlexSmallTablet = () => {
     movieService
       .getMoviveByTheaters()
       .then((res) => {
-        console.log(res);
         setCineFlex(res.data.content);
       })
       .catch((err) => {
@@ -45,8 +44,7 @@ const CineFlexSmallTablet = () => {
                       key: cinema.maCumRap,
                       children: (
                         <div
-                          style={{ height: 420,
-                          fontSize: "0.75rem" }}
+                          style={{ height: 420, fontSize: "0.75rem" }}
                           className="overflow-y-scroll"
                         >
                           {cinema.danhSachPhim.map((item) => {

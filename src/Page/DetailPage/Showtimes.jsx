@@ -18,7 +18,7 @@ const Showtimes = ({ id }) => {
     fetchShowtime();
   }, []);
   return (
-    <div>
+    <div id="showtime">
       <h2 className="font-bold text-xl">Showtimes</h2>
       <div className="bg-white py-10 rounded">
         <Tabs
@@ -28,7 +28,7 @@ const Showtimes = ({ id }) => {
           tabPosition="left"
           items={showtime.map((item) => {
             return {
-              label: <img className="h-16" src={item.logo} />,
+              label: <img className="h-8 sm:h-16" src={item.logo} />,
               key: item.maHeThongRap,
               children: (
                <div style={{ height: 500 }}

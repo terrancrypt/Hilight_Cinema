@@ -39,7 +39,7 @@ const LoginPage = () => {
   return (
     <div className="container">
       <div className="loginpage__content p-5 md:p-10 w-100 rounded bg-blue-800 flex-col-reverse md:flex-row flex justify-center items-center relative">
-        <div className="w-full md:w-1/2 z-50">
+        <div className="w-full lg:w-1/2 z-20">
           <h2 className="text-2xl font-bold mb-4 text-center">LOGIN</h2>
           <Form
             name="basic"

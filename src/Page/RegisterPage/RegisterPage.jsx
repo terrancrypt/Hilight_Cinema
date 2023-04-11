@@ -61,8 +61,8 @@ const RegisterPage = () => {
 
   return (
     <div className="container">
-      <div className="registerpage__content p-10 w-100 rounded bg-blue-800 flex justify-center items-center relative">
-        <div className="w-1/2 z-50">
+      <div className="registerpage__content p-5 md:p-10 w-100 rounded bg-blue-800 flex-col-reverse md:flex-row flex justify-center items-center relative">
+        <div className="w-full lg:w-1/2 z-20">
           <h2 className="text-2xl font-bold mb-4 text-center">REGISTER</h2>
           <Form
             {...formItemLayout}
@@ -70,7 +70,7 @@ const RegisterPage = () => {
             name="register"
             onFinish={onFinish}
             style={{
-              maxWidth: 600,
+              maxWidth: 500,
             }}
             scrollToFirstError
           >
@@ -187,7 +187,7 @@ const RegisterPage = () => {
               </Button>
             </Form.Item>
           </Form>
-          <p className="text-center">
+          <p className="text-center text-sm sm:text-medium">
             Do you already have an account?{" "}
             <NavLink to="/login" className="underline hover:text-blue-100">
               Login

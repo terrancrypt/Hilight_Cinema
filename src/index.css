@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.menu__content{
+    z-index: 100;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 425px) {
@@ -13,6 +17,11 @@
     /* Cineplex Tabs */
     :where(.css-dev-only-do-not-override-1e3x2xa).ant-tabs .ant-tabs-tab{
         font-size: 10px;
+    }
+
+    /* AntDesign Card chỉnh sử trong DetailPage */
+    :where(.css-dev-only-do-not-override-1e3x2xa).ant-card .ant-card-body {
+        padding: 5;
     }
 }
 

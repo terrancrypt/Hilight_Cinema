@@ -12,7 +12,12 @@ export const movieService = {
   getDetailMovie: (maPhim) => {
     return https.get(`/api/QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`);
   },
-  getShowtime: (maPhim) =>{
-    return https.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`)
-  }
+  getShowtime: (maPhim) => {
+    return https.get(
+      `/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`
+    );
+  },
+  getBannerMovie: () => {
+    return https.get(`/api/QuanLyPhim/LayDanhSachBanner`);
+  },
 };

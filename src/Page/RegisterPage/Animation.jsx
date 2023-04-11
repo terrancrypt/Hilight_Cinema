@@ -11,7 +11,7 @@ const Animate = () => {
 
   const { View } = useLottie(options);
 
-  return <div className="w-auto">{View}</div>;
+  return <div className="w-auto md:w-75">{View}</div>;
 };
 
 export default Animate;

@@ -6,16 +6,16 @@ const ItemShowtimes = ({ data }) => {
   return (
     <div className="pr-6">
       <Card>
-        <div className="flex space-x-3 justify-start items-center">
+        <div className="flex-col sm:flex-row flex space-y-2 space-x-3 justify-start items-center">
           <img className="w-16 rounded-full" src={data.hinhAnh} />
           <div>
-            <h3 className="text-2xl font-semibold">{data.tenCumRap}</h3>
-            <span>Address: {data.diaChi}</span>
+            <h3 className="text-base sm:text-2xl font-semibold">{data.tenCumRap}</h3>
+            <span className="text-xs sm:text-sm">Address: {data.diaChi}</span>
           </div>
         </div>
-        <div className="flex mt-3">
+        <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
             {data.lichChieuPhim.map((item) => {
-              return <Card className="shadow hover:shadow-none transition-all cursor-pointer">
+              return <Card className="text-xs sm:text-sm shadow hover:shadow-none transition-all cursor-pointer">
                 <span>{moment(item.ngayChieuGioChieu).format("DD/MM/YYYY ~ hh:mm")} </span>
               </Card>;
             })}

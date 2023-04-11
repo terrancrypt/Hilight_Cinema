@@ -10,7 +10,6 @@ const CineFlexSmallMobile = () => {
     movieService
       .getMoviveByTheaters()
       .then((res) => {
-        console.log(res);
         setCineFlex(res.data.content);
       })
       .catch((err) => {
@@ -29,29 +28,30 @@ const CineFlexSmallMobile = () => {
             height: 800,
           }}
           tabPosition="left"
-          items={cineFlex.map((cineFlex) => {
+          items={cineFlex.map((cineFlex, index) => {
             return {
               label: <img className="h-10" src={cineFlex.logo} />,
               key: cineFlex.maHeThongRap,
               children: (
                 <Tabs
+                key={index}
                   style={{
                     width: 180,
                   }}
                   tabPosition="top"
-                  items={cineFlex.lstCumRap.map((cinema) => {
+                  items={cineFlex.lstCumRap.map((cinema, index) => {
                     return {
                       label: cinema.tenCumRap,
                       key: cinema.maCumRap,
                       children: (
                         <div
                           style={{ height: 720, fontSize: "0.75rem" }}
-                          className="overflow-y-scroll"
+                          className="overflow-y-scroll" key={index}
                         >
-                          {cinema.danhSachPhim.map((item) => {
+                          {cinema.danhSachPhim.map((item, index) => {
                             return (
                               <div className="mb-5">
-                                <ItemCineFlex data={item} />
+                                <ItemCineFlex data={item} key={index}/>
                               </div>
                             );
                           })}
