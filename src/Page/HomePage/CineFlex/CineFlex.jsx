@@ -1,30 +1,18 @@
 import React from "react";
 import CineFlexDesktop from "./CineFlexDesktop";
-import { Desktop, Mobile, SmallMobile, SmallTablet, Tablet } from "../../../Layouts/Responsive";
-import CineFlexTablet from "./CineFlexTablet";
-import CineFlexSmallTablet from "./CineFlexSmallTablet";
-import CineFlexMobile from "./CineFlexMobile";
-import CineFlexSmallMobile from "./CineFlexSmallMobile";
+import { Default, Desktop, Mobile, SmallMobile, SmallTablet, Tablet } from "../../../Layouts/Responsive";
+import CineFlexDefault from "./CineFlexDefault";
 
 const CineFlex = () => {
   return (
-    <>
+    <div className="container">
       <Desktop>
        <CineFlexDesktop/>
       </Desktop>
-      <Tablet>
-      <CineFlexTablet/>
-      </Tablet>
-      <SmallTablet>
-        <CineFlexSmallTablet/>
-      </SmallTablet>
-      <Mobile>
-        <CineFlexMobile/>
-      </Mobile>
-      <SmallMobile>
-        <CineFlexSmallMobile/>
-      </SmallMobile>
-    </>
+      <Default>
+        <CineFlexDefault/>
+      </Default>
+    </div>
   );
 };
 

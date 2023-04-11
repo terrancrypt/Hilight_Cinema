@@ -1,18 +1,30 @@
 import React, { useEffect } from "react";
-import { Tabs } from "antd";
+import { Tabs, message } from "antd";
 import { useState } from "react";
 import { movieService } from "../../../services/movieService";
 import ItemCineFlex from "./ItemCineFlex";
+import { useDispatch } from "react-redux";
+import { setLoadingOff, setLoadingOn } from "../../../toolkit/spinnerSlice";
 
 const CineFlexDesktop = () => {
   const [cineFlex, setCineFlex] = useState([]);
+
+  let dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(setLoadingOn());
+  }, []);
+
   useEffect(() => {
     movieService
       .getMoviveByTheaters()
       .then((res) => {
+        dispatch(setLoadingOff());
         setCineFlex(res.data.content);
       })
       .catch((err) => {
+        dispatch(setLoadingOff());
+        message.error("Can't download data!")
         console.log(err);
       });
   }, []);
@@ -50,7 +62,7 @@ const CineFlexDesktop = () => {
                           {cinema.danhSachPhim.map((item, index) => {
                             return (
                               <div className="mb-5">
-                                <ItemCineFlex data={item} key={index}/>
+                                <ItemCineFlex data={item} key={index} />
                               </div>
                             );
                           })}

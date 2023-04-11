@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from "react";
 import ItemMovie from "./ItemMovie";
 import { movieService } from "../../../services/movieService";
+import { useDispatch } from "react-redux";
+import { setLoadingOff, setLoadingOn } from "../../../toolkit/spinnerSlice";
 
 function ListMovie() {
   const [movies, setMovie] = useState([]);
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setLoadingOn());
+  }, []);
 
   useEffect(() => {
     movieService
       .getMovieList()
       .then((res) => {
+        dispatch(setLoadingOff());
         setMovie(res.data.content);
       })
       .catch((err) => {
+        dispatch(setLoadingOff());
         console.log(err);
       });
   });
   return (
-    <div id="listmovie">
+    <div id="listmovie" className="container">
       <h2 className="text-3xl sm:text-4xl uppercase font-bold text-center mb-4">
         Hot Movies
       </h2>

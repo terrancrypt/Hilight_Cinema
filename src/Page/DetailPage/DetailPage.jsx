@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { movieService } from "../../services/movieService";
-import moment from "moment";
 import MovieDetail from "./MovieDetail";
 import Showtimes from "./Showtimes";
+import { useDispatch } from "react-redux";
+import { setLoadingOff, setLoadingOn } from "../../toolkit/spinnerSlice";
 
 const DetailPage = () => {
   // Lấy id từ params
@@ -11,14 +12,22 @@ const DetailPage = () => {
   // Tạo state chữa dữ liệu lấy về từ API
   const [movie, setMovie] = useState({});
 
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setLoadingOn());
+  }, []); 
+
   // Render dữ liệu lấy từ API sau khi giao diện loading xong
   useEffect(() => {
     // Gọi API lấy dữ liệu từ id đã có
     let fetchDetail = async () => {
       try {
         let result = await movieService.getDetailMovie(id);
+        dispatch(setLoadingOff());
         setMovie(result.data.content);
       } catch (error) {
+        dispatch(setLoadingOff());
         console.log(error);
       }
     };

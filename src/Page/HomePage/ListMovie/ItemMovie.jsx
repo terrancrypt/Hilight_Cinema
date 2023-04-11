@@ -9,9 +9,6 @@ function ItemMovie({ data }) {
     <NavLink to={`/detail/${data.maPhim}`}>
       <Card className="card__movie"
         hoverable
-        style={{
-          width: 240,
-        }}
         cover={
           <img
             className="h-60 object-cover object-top"
