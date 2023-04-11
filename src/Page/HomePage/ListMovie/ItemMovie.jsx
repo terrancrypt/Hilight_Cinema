@@ -1,13 +1,13 @@
 import React from "react";
 import { Card } from "antd";
-import { movieService } from "../../../services/movieService";
+import './ListMovie.css';
 import { NavLink } from "react-router-dom";
 const { Meta } = Card;
 
 function ItemMovie({ data }) {
   return (
     <NavLink to={`/detail/${data.maPhim}`}>
-      <Card
+      <Card className="card__movie"
         hoverable
         style={{
           width: 240,

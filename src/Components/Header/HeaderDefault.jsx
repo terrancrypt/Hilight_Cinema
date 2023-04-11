@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import UserMenu from "./UserMenu";
 import "./Header.css";
 
-export default function HeaderTablet() {
+export default function HeaderDefault() {
   const [toggle, setToggle] = useState(false);
   let handleButtonMenu = () => {
     let button = document.querySelector(".buttonMenu");

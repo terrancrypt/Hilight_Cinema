@@ -38,8 +38,8 @@ const LoginPage = () => {
 
   return (
     <div className="container">
-      <div className="loginpage__content p-10 w-100 rounded bg-blue-800 flex justify-center items-center relative">
-        <div className="w-1/2 z-50">
+      <div className="loginpage__content p-5 md:p-10 w-100 rounded bg-blue-800 flex-col-reverse md:flex-row flex justify-center items-center relative">
+        <div className="w-full md:w-1/2 z-50">
           <h2 className="text-2xl font-bold mb-4 text-center">LOGIN</h2>
           <Form
             name="basic"
@@ -50,7 +50,7 @@ const LoginPage = () => {
               span: 16,
             }}
             style={{
-              maxWidth: 600,
+              maxWidth: 500,
             }}
             initialValues={{
               remember: true,
@@ -110,7 +110,7 @@ const LoginPage = () => {
               </Button>
             </Form.Item>
           </Form>
-          <p className="text-center">Do not have an account? <NavLink to="/register" className="underline hover:text-blue-100">Register</NavLink></p>
+          <p className="text-center text-sm sm:text-medium">Do not have an account? <NavLink to="/register" className="underline hover:text-blue-100">Register</NavLink></p>
         </div>
         <div className="z-10">
           <Animate />

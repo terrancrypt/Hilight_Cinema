@@ -24,3 +24,8 @@ export const SmallMobile = ({ children }) => {
   const isSmallMobile = useMediaQuery({ maxWidth: 539 });
   return isSmallMobile ? children : null;
 };
+
+export const Default = ({ children }) => {
+  const isDefault = useMediaQuery({ maxWidth: 1023 });
+  return isDefault ? children : null;
+};

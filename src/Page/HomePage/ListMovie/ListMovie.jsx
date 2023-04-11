@@ -17,7 +17,7 @@ function ListMovie() {
   });
   return (
     <div id="listmovie">
-      <h2 className="text-4xl uppercase font-bold text-center mb-2">
+      <h2 className="text-3xl sm:text-4xl uppercase font-bold text-center mb-4">
         Hot Movies
       </h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

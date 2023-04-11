@@ -1,8 +1,8 @@
 import React from "react";
 import './Header.css';
-import { Desktop, Tablet } from "../../Layouts/Responsive";
+import { Default, Desktop, Tablet } from "../../Layouts/Responsive";
 import HeaderDesktop from "./HeaderDesktop";
-import HeaderTablet from "./HeaderTablet";
+import HeaderDefault from "./HeaderDefault";
 
 export default function Header() {
   return (
@@ -10,9 +10,9 @@ export default function Header() {
       <Desktop>
         <HeaderDesktop/>
       </Desktop>
-      <Tablet>
-        <HeaderTablet/>
-      </Tablet>
+      <Default>
+        <HeaderDefault/>
+      </Default>
     </>
   );
 }

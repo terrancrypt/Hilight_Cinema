@@ -1,0 +1,5 @@
+@media only screen and (max-width: 639px) {
+    .card__movie{
+        width: 100%!important;
+    }
+}
