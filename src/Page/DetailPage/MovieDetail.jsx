@@ -9,11 +9,9 @@ const MovieDetail = ({ movie }) => {
         <img className="rounded" style={{ width: 250 }} src={movie.hinhAnh} />
         <div className="flex flex-col justify-between text-center sm:text-left space-y-8">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold">{movie.tenPhim}</h2>
-
-
+            <h2 className="text-2xl md:text-3xl font-bold">{movie.tenPhim}</h2>
             
-            <div className=" flex space-x-12 items-center   ">
+            <div className=" flex flex-col sm:flex-row sm:space-x-12 items-center sm:items-end justify-center sm:justify-start">
               <div className="flex space-x-2 justify-center sm:justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +29,9 @@ const MovieDetail = ({ movie }) => {
                 </svg>
                 <span>{moment(movie.ngayKhoiChieu).format("D/MM/YYYY")}</span>
               </div>
-              <div className="flex space-x-2 justify-center " >
-              
-                  <Rate
+              <div className="flex justify-start items-end space-x-2" >
+                 <span>Rate: </span>
+                  <Rate className="flex items-baseline"
                     allowHalf
                     value={movie.danhGia / 2}
                     style={{ color: "yellow", fontSize: 20 }}
