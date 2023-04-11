@@ -5,7 +5,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-:where(.css-dev-only-do-not-override-1e3x2xa).ant-form-item .ant-form-item-label >label {
+:where(.css-1e3x2xa).ant-form-item .ant-form-item-label >label {
   color: white;
-  font-size: 0.75rem;
 }
