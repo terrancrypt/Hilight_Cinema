@@ -1,6 +1,6 @@
 import React from "react";
 import './Header.css';
-import { Default, Desktop, Tablet } from "../../Layouts/Responsive";
+import { Default, Desktop, } from "../../Layouts/Responsive";
 import HeaderDesktop from "./HeaderDesktop";
 import HeaderDefault from "./HeaderDefault";
 
